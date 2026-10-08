@@ -1,7 +1,7 @@
 import { API_BASE_URL, API_ENDPOINTS } from "@/constants";
 import type { PostType } from "@/types";
 
-export const getPaginatedPosts = async (
+const getPaginatedPosts = async (
   page: number = 1,
   PAGE_SIZE: number = 32,
   signal?: AbortSignal,
@@ -19,3 +19,5 @@ export const getPaginatedPosts = async (
 
   return response.json();
 };
+
+export { getPaginatedPosts };
