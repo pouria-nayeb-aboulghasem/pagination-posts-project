@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+.pagination-item.active {
+  @apply bg-gray-500 text-gray-50;
+}
+
+.page-number.active {
+  @apply bg-gray-600 text-gray-50;
+}
+
+.prev-button,
+.next-button {
+  @apply cursor-pointer text-gray-900 font-bold;
+}
+
+.prev-button.disabled,
+.next-button.disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
