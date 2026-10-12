@@ -18,8 +18,6 @@ function PostList() {
 
     const fetchPosts = async () => {
       try {
-        setLoading(true);
-
         const data = await getPaginatedPosts(
           page,
           PAGE_SIZE,
@@ -32,7 +30,7 @@ function PostList() {
           return;
         }
 
-        setError("Failed to fetch posts");
+        setError(`${error}`);
       } finally {
         setLoading(false);
       }

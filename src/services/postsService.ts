@@ -3,7 +3,7 @@ import type { PostType } from "@/types";
 
 const getPaginatedPosts = async (
   page: number = 1,
-  PAGE_SIZE: number = 32,
+  PAGE_SIZE: number = 10,
   signal?: AbortSignal,
 ): Promise<PostType[]> => {
   const response = await fetch(

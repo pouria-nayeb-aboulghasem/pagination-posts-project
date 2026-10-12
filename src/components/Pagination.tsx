@@ -1,12 +1,11 @@
-import { PAGE_SIZE } from "@/constants";
-import { totalPosts } from "@/constants/pagination";
+import { PAGE_SIZE, totalPosts } from "@/constants";
 
-type PaginationType = {
+type PaginationProps = {
   page: number;
   setPage: React.Dispatch<React.SetStateAction<number>>;
 };
 
-function Pagination({ page, setPage }: PaginationType) {
+function Pagination({ page, setPage }: PaginationProps) {
   const totalPages = Math.ceil(totalPosts / PAGE_SIZE);
 
   return (
@@ -37,7 +36,6 @@ function Pagination({ page, setPage }: PaginationType) {
           (pageNumber) => (
             <li key={pageNumber}>
               <button
-                key={pageNumber}
                 onClick={() => setPage(pageNumber)}
                 className={`flex items-center justify-center text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading font-medium text-sm w-9 h-9 focus:outline-none cursor-pointer page-number ${page === pageNumber ? "active" : ""}`}
               >
