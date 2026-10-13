@@ -6,7 +6,6 @@ Create a react project with tailwindcss and ViteJS.
 
 - ViteJS
 - TailwindCss
-- Flowbite
 - RemixIcon
 
 ## Setup
@@ -49,17 +48,17 @@ tsconfig.app.json
 ## Folder structures
 
 - components
-  - PostList.tsx
-  - PostItem.tsx
+  - PhotoList.tsx
+  - PhotoTable.tsx
   - Error.tsx
   - Loading.tsx
 - constants
   - apiEndpoints.ts
   - index.ts
 - services
-  - postsService.ts
+  - photosService.ts
 - types
-  - post.d.ts
+  - photo.d.ts
   - index.ts
 
 ## .env file
