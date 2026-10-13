@@ -1,3 +1,3 @@
-import type { PostType } from "./post";
+import type { PhotoType } from "./photo";
 
-export type { PostType };
+export type { PhotoType };
