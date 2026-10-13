@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getPhotos } from "@/services/photosService";
 import type { PhotoType } from "@/types";
-import ErrorMessage from "./Error";
+import ErrorMessage from "./ErrorMessage";
 import Loading from "./Loading";
 import PhotoTable from "./PhotoTable";
 
