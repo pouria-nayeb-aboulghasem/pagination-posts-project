@@ -2,8 +2,8 @@ type ErrorProps = {
   error: string | null;
 };
 
-function Error({ error }: ErrorProps) {
+function ErrorMessage({ error }: ErrorProps) {
   return <div>{error}</div>;
 }
 
-export default Error;
+export default ErrorMessage;

@@ -3,7 +3,7 @@ import { getPaginatedPosts } from "@/services/postsService";
 import type { PostType } from "@/types";
 import { useEffect, useState } from "react";
 import Loading from "./Loading";
-import Error from "@/components/Error";
+import ErrorMessage from "@/components/ErrorMessage";
 import Pagination from "./Pagination";
 import PostItem from "./PostItem";
 
@@ -26,13 +26,17 @@ function PostList() {
 
         setPosts(data);
       } catch (error) {
-        if (error instanceof DOMException && error.name === "AbortError") {
-          return;
+        if (!controller.signal.aborted) {
+          setError(
+            error instanceof Error
+              ? error.message
+              : "An unexpected error occurred.",
+          );
         }
-
-        setError(`${error}`);
       } finally {
-        setLoading(false);
+        if (!controller.signal.aborted) {
+          setLoading(false);
+        }
       }
     };
 
@@ -45,7 +49,7 @@ function PostList() {
 
   if (loading) return <Loading />;
 
-  if (error) return <Error error={error} />;
+  if (error) return <ErrorMessage error={error} />;
 
   return (
     <>
