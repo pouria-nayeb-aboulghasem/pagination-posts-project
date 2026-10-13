@@ -50,7 +50,7 @@ tsconfig.app.json
 - components
   - PhotoList.tsx
   - PhotoTable.tsx
-  - Error.tsx
+  - ErrorMessage.tsx
   - Loading.tsx
 - constants
   - apiEndpoints.ts
